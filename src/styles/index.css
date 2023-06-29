@@ -4,3 +4,11 @@ body {
   box-sizing: border-box;
   height: 100%;
 }
+::-webkit-scrollbar {
+  width: 5px;
+  background: #f1e3e4;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #665687;
+}
