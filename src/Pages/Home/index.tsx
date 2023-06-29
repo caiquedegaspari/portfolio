@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Typography } from '@mui/material';
+import { Grid, Typography, useMediaQuery } from '@mui/material';
 import { Presentation } from '../../components/title';
 import { theme } from '../../styles/theme';
 import { Card } from '../../components/card';
@@ -9,16 +9,24 @@ import challenge from '../../assets/radio-browser.png';
 import rentx from '../../assets/rentx.png';
 
 export function Home() {
+	const isDesktopScreen = useMediaQuery('(min-width: 821px)');
+	const isDesktopHeight = useMediaQuery('(min-height: 673px)');
+
 	return (
-		<Grid container xs={12}>
+		<Grid container xs={12} width="100%">
 			<Grid item xs={12}>
 				<Presentation />
 			</Grid>
 			<Grid
 				container
 				xs={12}
-				minHeight="100vh"
-				maxHeight="200vh"
+				minHeight={
+					isDesktopScreen && isDesktopHeight
+						? '110vh'
+						: isDesktopScreen && !isDesktopHeight
+						? '150vh'
+						: '165vh'
+				}
 				bgcolor={theme.palette.background.default}
 				sx={{
 					background: `linear-gradient(141deg, ${theme.palette.background.default} 30%, ${theme.palette.primary.light} )`,
@@ -27,12 +35,12 @@ export function Home() {
 				alignItems="space-around"
 				justifyContent="center"
 			>
-				<Grid item xs={12}>
+				<Grid item xs={12} /* margin={isDesktopScreen ? '20px 0' : 0} */>
 					<Typography
 						sx={{ color: theme.palette.primary.dark }}
-						fontSize={24}
+						fontSize={isDesktopScreen ? 32 : 24}
 						marginTop={3}
-						marginBottom={-4}
+						marginBottom={-8}
 						fontFamily="Anton"
 						textTransform="uppercase"
 						textAlign="center"
@@ -40,7 +48,14 @@ export function Home() {
 						alguns projetos em que trabalhei
 					</Typography>
 				</Grid>
-				<Grid item xs={5} height="300px">
+				<Grid
+					paddingX={1}
+					item
+					xs={12}
+					md={5}
+					height={isDesktopScreen ? '300px' : '200px'}
+					margin={isDesktopScreen ? '20px 0' : 0}
+				>
 					<Card
 						stack="fullstack"
 						technologies={[
@@ -62,7 +77,14 @@ export function Home() {
 						title="Cliente Real"
 					/>
 				</Grid>
-				<Grid item xs={5} height="300px">
+				<Grid
+					item
+					xs={12}
+					paddingX={1}
+					md={5}
+					height={isDesktopScreen ? '300px' : '200px'}
+					margin={isDesktopScreen ? '20px 0' : 0}
+				>
 					<Card
 						stack="fullstack"
 						technologies={[
@@ -82,7 +104,14 @@ export function Home() {
 						title="Cliente Real"
 					/>
 				</Grid>
-				<Grid item xs={5} height="300px">
+				<Grid
+					item
+					paddingX={1}
+					xs={12}
+					md={5}
+					height={isDesktopScreen ? '300px' : '200px'}
+					margin={isDesktopScreen ? '20px 0' : 0}
+				>
 					<Card
 						stack="frontend"
 						technologies={['react', 'typescript', 'mui']}
@@ -93,7 +122,14 @@ export function Home() {
 						title="Desafio"
 					/>
 				</Grid>
-				<Grid item xs={5} height="300px">
+				<Grid
+					paddingX={1}
+					item
+					xs={12}
+					md={5}
+					height={isDesktopScreen ? '300px' : '200px'}
+					margin={isDesktopScreen ? '20px 0' : 0}
+				>
 					<Card
 						stack="backend"
 						technologies={[

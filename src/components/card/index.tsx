@@ -1,4 +1,4 @@
-import { Box, IconButton, Typography } from '@mui/material';
+import { Box, IconButton, Typography, useMediaQuery } from '@mui/material';
 import React from 'react';
 import react from '../../assets/react.svg';
 import node from '../../assets/node.svg';
@@ -72,6 +72,8 @@ export function Card({
 		if (matchTech) cardTechs?.push(matchTech);
 	});
 
+	const isDesktopScreen = useMediaQuery('(min-width: 600px)');
+
 	return (
 		<>
 			<Box
@@ -95,7 +97,7 @@ export function Card({
 						padding="15px 0"
 						fontWeight={500}
 						fontFamily="Work Sans"
-						fontSize="18px"
+						fontSize={isDesktopScreen ? 18 : 12}
 						color="text.primary"
 					>
 						{description}
@@ -103,7 +105,11 @@ export function Card({
 					<Box>
 						{cardTechs.map(({ imgUri, name, url }) => (
 							<IconButton key={name} onClick={() => openNewTab(url)}>
-								<img height="30px" src={imgUri} alt={`${name} icon`} />
+								<img
+									height={isDesktopScreen ? '30px' : '20px'}
+									src={imgUri}
+									alt={`${name} icon`}
+								/>
 							</IconButton>
 						))}
 					</Box>

@@ -1,11 +1,18 @@
 import React from 'react';
 
-import { Box, Grid, IconButton, Typography } from '@mui/material';
+import {
+	Box,
+	Grid,
+	IconButton,
+	Typography,
+	useMediaQuery,
+} from '@mui/material';
 import { theme } from '../../styles/theme';
 import { Description, GitHub, LinkedIn } from '@mui/icons-material';
 import { openNewTab } from '../../utils/openInNewTab';
 
 export function Presentation() {
+	const isDesktopScreen = useMediaQuery('(min-width: 821px)');
 	return (
 		<Grid
 			height="100vh"
@@ -19,7 +26,7 @@ export function Presentation() {
 		>
 			<Typography
 				sx={{ color: theme.palette.primary.dark }}
-				fontSize={24}
+				fontSize={isDesktopScreen ? 24 : 18}
 				fontFamily="Anton"
 				textTransform="uppercase"
 				marginLeft="20%"
@@ -28,9 +35,9 @@ export function Presentation() {
 			</Typography>
 			<Box display="flex">
 				<Typography
-					lineHeight="170px"
+					lineHeight={isDesktopScreen ? '170px' : '85px'}
 					paddingLeft="20%"
-					fontSize={170}
+					fontSize={isDesktopScreen ? 170 : 55}
 					fontFamily="Anton"
 					textTransform="uppercase"
 					sx={{ color: theme.palette.text.primary }}
@@ -46,27 +53,27 @@ export function Presentation() {
 							)
 						}
 					>
-						<LinkedIn fontSize="large" />
+						<LinkedIn fontSize={isDesktopScreen ? 'large' : 'small'} />
 					</IconButton>
 
 					<IconButton
 						onClick={() => openNewTab('https://github.com/caiquedegaspari')}
 					>
-						<GitHub fontSize="large" />
+						<GitHub fontSize={isDesktopScreen ? 'large' : 'small'} />
 					</IconButton>
 					<IconButton
 						onClick={() => {
 							openNewTab('/CURRICULO-CAIQUE.pdf', true);
 						}}
 					>
-						<Description fontSize="large" />
+						<Description fontSize={isDesktopScreen ? 'large' : 'small'} />
 					</IconButton>
 				</Box>
 			</Box>
 			<Typography
-				lineHeight="150px"
+				lineHeight={isDesktopScreen ? '150px' : '50px'}
 				textAlign="center"
-				fontSize={170}
+				fontSize={isDesktopScreen ? 170 : 55}
 				fontFamily="Anton"
 				textTransform="uppercase"
 				sx={{ color: theme.palette.text.primary }}
@@ -76,7 +83,7 @@ export function Presentation() {
 			</Typography>
 			<Typography
 				sx={{ color: theme.palette.text.primary }}
-				fontSize={16}
+				fontSize={isDesktopScreen ? 16 : 10}
 				letterSpacing={-1}
 				fontFamily="Work Sans"
 				textTransform="uppercase"
