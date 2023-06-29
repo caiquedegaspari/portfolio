@@ -3,12 +3,9 @@ import React from 'react';
 import { Box, Grid, IconButton, Typography } from '@mui/material';
 import { theme } from '../../styles/theme';
 import { Description, GitHub, LinkedIn } from '@mui/icons-material';
+import { openNewTab } from '../../utils/openInNewTab';
 
 export function Presentation() {
-	const openNewTab = (url: string, isPdf?: boolean) => {
-		window.open(url, isPdf ? '_blank' : undefined);
-	};
-
 	return (
 		<Grid
 			height="100vh"
@@ -21,7 +18,7 @@ export function Presentation() {
 			justifyContent="center"
 		>
 			<Typography
-				sx={{ color: theme.palette.primary.light }}
+				sx={{ color: theme.palette.primary.dark }}
 				fontSize={24}
 				fontFamily="Anton"
 				textTransform="uppercase"
@@ -87,8 +84,7 @@ export function Presentation() {
 				textAlign="center"
 				fontWeight={500}
 			>
-				Estudo programação desde os meus 15 anos e comecei a trabalhar na área
-				com 17,
+				Estudo programação há 4 anos e comecei a trabalhar na área há 2 anos,
 				<br />
 				atuando principalmente com desenvolvimento web utilizando ReactJS e
 				NodeJS.
