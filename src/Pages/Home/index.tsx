@@ -99,10 +99,10 @@ export function Home() {
 						technologies={[
 							'typescript',
 							'node',
-							'typeorm',
 							'jest',
 							'swagger',
 							'docker',
+							'typeorm',
 						]}
 						img={rentx}
 						description={`API de aluguel de carros, com funcionalidades de login, cadastro de carros, 
