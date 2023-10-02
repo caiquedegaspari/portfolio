@@ -6,7 +6,7 @@ import { Card } from '../../components/card';
 import work from '../../assets/work-project-1.png';
 import work2 from '../../assets/work-project-2.png';
 import challenge from '../../assets/radio-browser.png';
-import rentx from '../../assets/rentx.png';
+import surveyapi from '../../assets/rentx.png';
 
 export function Home() {
 	const isDesktopScreen = useMediaQuery('(min-width: 821px)');
@@ -35,7 +35,7 @@ export function Home() {
 				alignItems="space-around"
 				justifyContent="center"
 			>
-				<Grid item xs={12} /* margin={isDesktopScreen ? '20px 0' : 0} */>
+				<Grid item xs={12}>
 					<Typography
 						sx={{ color: theme.palette.primary.dark }}
 						fontSize={isDesktopScreen ? 32 : 24}
@@ -116,6 +116,7 @@ export function Home() {
 						stack="frontend"
 						technologies={['react', 'typescript', 'mui']}
 						img={challenge}
+						projectUrl="https://radio-browser-seven.vercel.app/"
 						description={`Radio Browser. Website capaz de consultar uma API pública de estações de rádio, que permite
 						  possível listar as rádios com paginação, buscar rádios por filtros específicos, 
 						adicionar rádios e ouvir as rádios.`}
@@ -132,18 +133,11 @@ export function Home() {
 				>
 					<Card
 						stack="backend"
-						technologies={[
-							'typescript',
-							'node',
-							'jest',
-							'swagger',
-							'docker',
-							'typeorm',
-						]}
-						img={rentx}
-						description={`API de aluguel de carros, com funcionalidades de login, cadastro de carros, 
-						fluxo de aluguel, devolução, cadastro de imagens para carros em AWS Storage, 
-						injeção de dependência com Tsrynge e etc.`}
+						technologies={['typescript', 'node', 'jest', 'swagger', 'docker']}
+						img={surveyapi}
+						description={`API de enquetes, com funcionalidades de login/signup, cadastro/listagem de enquetes, 
+						com foco na aplicação de conceitos como DDD, Clean Code, Clean Architeture, TDD e SOLID.`}
+						projectUrl="https://www.udemy.com/certificate/UC-29d60ab8-efb7-4065-bcb2-09b541df208d/"
 						title="Projeto de curso"
 					/>
 				</Grid>

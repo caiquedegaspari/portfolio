@@ -56,6 +56,7 @@ interface CardProps {
 	description: string;
 	img: string;
 	technologies: TechTypes[];
+	projectUrl?: string;
 	stack: 'fullstack' | 'backend' | 'frontend';
 }
 
@@ -65,6 +66,7 @@ export function Card({
 	img,
 	technologies,
 	stack,
+	projectUrl,
 }: CardProps) {
 	const cardTechs: Technologies[] = [];
 	technologies.forEach((item) => {
@@ -77,8 +79,10 @@ export function Card({
 	return (
 		<>
 			<Box
+				onClick={() => projectUrl && openNewTab(projectUrl)}
 				height="100%"
 				sx={{
+					cursor: projectUrl ? 'pointer' : 'default',
 					backgroundImage: `url(${img})`,
 					backgroundSize: 'cover',
 				}}
