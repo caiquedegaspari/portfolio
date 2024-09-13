@@ -91,10 +91,10 @@ export function Presentation() {
 				textAlign="center"
 				fontWeight={500}
 			>
-				Estudo programação há 4 anos e comecei a trabalhar na área há 2 anos,
+				Estudo programação há 5 anos e comecei a trabalhar na área há 3 anos,
 				<br />
-				atuando principalmente com desenvolvimento web utilizando ReactJS e
-				NodeJS.
+				atuando principalmente com desenvolvimento web utilizando NodeJS e
+				ReactJS.
 			</Typography>
 		</Grid>
 	);
